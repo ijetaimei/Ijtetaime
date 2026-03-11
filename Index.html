@@ -1,0 +1,426 @@
+‏<!DOCTYPE html>
+‏<html lang="ar" dir="rtl">
+‏<head>
+‏    <meta charset="UTF-8">
+‏    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‏    <title>Jetaime - خدمات تصميم المتاجر الإلكترونية</title>
+‏    <style>
+        * {
+‏            margin: 0;
+‏            padding: 0;
+‏            box-sizing: border-box;
+        }
+
+‏        body {
+‏            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+‏            background: #CFC5B2;
+‏            color: #40323D;
+‏            line-height: 1.8;
+        }
+
+‏        .container {
+‏            max-width: 1200px;
+‏            margin: 0 auto;
+‏            padding: 0 20px;
+        }
+
+‏        /* Header */
+‏        header {
+‏            background: #40323D;
+‏            padding: 25px 0;
+‏            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+‏        .logo {
+‏            text-align: center;
+‏            color: #D1AC65;
+‏            font-size: 1.8rem;
+‏            font-weight: 400;
+‏            letter-spacing: 6px;
+‏            text-transform: uppercase;
+        }
+
+‏        /* Hero Section */
+‏        .hero {
+‏            text-align: center;
+‏            padding: 120px 20px 100px;
+‏            background: linear-gradient(135deg, #40323D 0%, #5a4550 100%);
+        }
+
+‏        .hero h1 {
+‏            font-size: 2rem;
+‏            color: #CFC5B2;
+‏            margin-bottom: 20px;
+‏            font-weight: 400;
+‏            letter-spacing: 1px;
+        }
+
+‏        .hero h1 .highlight {
+‏            color: #D1AC65;
+‏            font-weight: 500;
+        }
+
+‏        .hero p {
+‏            font-size: 1rem;
+‏            color: #B29F9C;
+‏            margin-bottom: 50px;
+‏            max-width: 650px;
+‏            margin-left: auto;
+‏            margin-right: auto;
+‏            font-weight: 300;
+‏            line-height: 1.8;
+        }
+
+‏        .price-tag {
+‏            display: inline-flex;
+‏            flex-direction: column;
+‏            align-items: center;
+‏            gap: 8px;
+‏            background: rgba(209, 172, 101, 0.15);
+‏            border: 2px solid #D1AC65;
+‏            color: #D1AC65;
+‏            padding: 25px 50px;
+‏            border-radius: 4px;
+‏            margin: 30px 0;
+        }
+
+‏        .price-tag .old-price {
+‏            font-size: 0.95rem;
+‏            text-decoration: line-through;
+‏            opacity: 0.5;
+‏            color: #B29F9C;
+        }
+
+‏        .price-tag .new-price {
+‏            font-size: 1.8rem;
+‏            font-weight: 500;
+‏            letter-spacing: 1px;
+        }
+
+‏        /* Services Section */
+‏        .services {
+‏            background: #CFC5B2;
+‏            padding: 90px 20px;
+        }
+
+‏        .services h2 {
+‏            text-align: center;
+‏            font-size: 1.6rem;
+‏            color: #40323D;
+‏            margin-bottom: 60px;
+‏            font-weight: 500;
+‏            letter-spacing: 2px;
+‏            text-transform: uppercase;
+        }
+
+‏        .services-grid {
+‏            display: grid;
+‏            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+‏            gap: 30px;
+‏            margin-top: 40px;
+        }
+
+‏        .service-card {
+‏            background: white;
+‏            padding: 35px 25px;
+‏            border-radius: 2px;
+‏            text-align: center;
+‏            transition: all 0.4s ease;
+‏            border: 1px solid rgba(160, 113, 76, 0.15);
+‏            box-shadow: 0 2px 8px rgba(64, 50, 61, 0.08);
+        }
+
+‏        .service-card:hover {
+‏            transform: translateY(-8px);
+‏            box-shadow: 0 12px 30px rgba(64, 50, 61, 0.12);
+‏            border-color: #D1AC65;
+        }
+
+‏        .service-icon {
+‏            font-size: 2.2rem;
+‏            margin-bottom: 18px;
+‏            opacity: 0.85;
+        }
+
+‏        .service-card h3 {
+‏            color: #40323D;
+‏            font-size: 1.05rem;
+‏            margin-bottom: 12px;
+‏            font-weight: 500;
+‏            letter-spacing: 0.5px;
+        }
+
+‏        .service-card p {
+‏            color: #A0714C;
+‏            font-size: 0.9rem;
+‏            line-height: 1.7;
+‏            font-weight: 300;
+        }
+
+‏        /* Features List */
+‏        .features {
+‏            background: linear-gradient(135deg, #40323D 0%, #2d2430 100%);
+‏            padding: 90px 20px;
+‏            color: #CFC5B2;
+        }
+
+‏        .features h2 {
+‏            text-align: center;
+‏            font-size: 1.6rem;
+‏            margin-bottom: 55px;
+‏            color: #D1AC65;
+‏            font-weight: 500;
+‏            letter-spacing: 2px;
+‏            text-transform: uppercase;
+        }
+
+‏        .features-list {
+‏            max-width: 800px;
+‏            margin: 0 auto;
+‏            display: grid;
+‏            gap: 20px;
+        }
+
+‏        .feature-item {
+‏            background: rgba(209, 172, 101, 0.08);
+‏            padding: 18px 22px;
+‏            border-radius: 2px;
+‏            display: flex;
+‏            align-items: center;
+‏            gap: 18px;
+‏            transition: all 0.4s ease;
+‏            border-right: 2px solid rgba(209, 172, 101, 0.4);
+        }
+
+‏        .feature-item:hover {
+‏            background: rgba(209, 172, 101, 0.15);
+‏            transform: translateX(-5px);
+‏            border-right-color: #D1AC65;
+        }
+
+‏        .feature-item .check {
+‏            font-size: 1.2rem;
+‏            color: #D1AC65;
+‏            flex-shrink: 0;
+        }
+
+‏        .feature-item p {
+‏            font-size: 0.95rem;
+‏            margin: 0;
+‏            font-weight: 300;
+‏            color: #B29F9C;
+        }
+
+‏        /* CTA Section */
+‏        .cta {
+‏            text-align: center;
+‏            padding: 100px 20px;
+‏            background: #CFC5B2;
+        }
+
+‏        .cta h2 {
+‏            font-size: 1.8rem;
+‏            color: #40323D;
+‏            margin-bottom: 25px;
+‏            font-weight: 400;
+‏            letter-spacing: 1px;
+        }
+
+‏        .cta p {
+‏            font-size: 1rem;
+‏            color: #A0714C;
+‏            margin-bottom: 45px;
+‏            max-width: 600px;
+‏            margin-left: auto;
+‏            margin-right: auto;
+‏            font-weight: 300;
+        }
+
+‏        .whatsapp-btn {
+‏            display: inline-block;
+‏            background: #40323D;
+‏            color: #D1AC65;
+‏            padding: 15px 45px;
+‏            border-radius: 2px;
+‏            font-size: 1rem;
+‏            font-weight: 500;
+‏            text-decoration: none;
+‏            transition: all 0.4s ease;
+‏            border: 2px solid #40323D;
+‏            letter-spacing: 0.5px;
+        }
+
+‏        .whatsapp-btn:hover {
+‏            transform: translateY(-2px);
+‏            box-shadow: 0 8px 25px rgba(64, 50, 61, 0.25);
+‏            background: #D1AC65;
+‏            color: #40323D;
+        }
+
+‏        .whatsapp-btn::before {
+‏            content: '📱 ';
+‏            margin-left: 8px;
+        }
+
+‏        /* Footer */
+‏        footer {
+‏            background: linear-gradient(135deg, #40323D 0%, #2d2430 100%);
+‏            color: #B29F9C;
+‏            text-align: center;
+‏            padding: 35px 20px;
+        }
+
+‏        footer p {
+‏            font-size: 0.9rem;
+‏            font-weight: 300;
+‏            letter-spacing: 0.5px;
+        }
+
+‏        /* Responsive */
+‏        @media (max-width: 768px) {
+‏            .hero h1 {
+‏                font-size: 2rem;
+            }
+
+‏            .hero p {
+‏                font-size: 1.2rem;
+            }
+
+‏            .price-tag {
+‏                font-size: 1.8rem;
+‏                padding: 20px 40px;
+            }
+
+‏            .services h2,
+‏            .features h2,
+‏            .cta h2 {
+‏                font-size: 2rem;
+            }
+
+‏            .whatsapp-btn {
+‏                font-size: 1.4rem;
+‏                padding: 20px 40px;
+            }
+
+‏            .services-grid {
+‏                grid-template-columns: 1fr;
+            }
+        }
+‏    </style>
+‏</head>
+‏<body>
+‏    <header>
+‏        <div class="container">
+‏            <div class="logo">Jetaime</div>
+‏        </div>
+‏    </header>
+
+‏    <section class="hero">
+‏        <div class="container">
+‏            <h1>متجرك الإلكتروني جاهز مع <span class="highlight">Jetaime</span></h1>
+‏            <p>تصميم متجر إلكتروني كامل: تصميم واجهة المتجر، إضافة الأقسام والمنتجات، الخيارات والكميات، سياسات الخصوصية والاستبدال، وصفحة من نحن</p>
+‏            <div class="price-tag">
+‏                <span class="old-price">199 ريال</span>
+‏                <span class="new-price">139 ريال</span>
+‏            </div>
+‏        </div>
+‏    </section>
+
+‏    <section class="services">
+‏        <div class="container">
+‏            <h2>ماذا نقدم لك؟</h2>
+‏            <div class="services-grid">
+‏                <div class="service-card">
+‏                    <div class="service-icon">🎨</div>
+‏                    <h3>تصميم واجهة المتجر</h3>
+‏                    <p>تصميم احترافي لواجهة المتجر والصفحات الرئيسية بشكل جذاب</p>
+‏                </div>
+
+‏                <div class="service-card">
+‏                    <div class="service-icon">📂</div>
+‏                    <h3>إضافة الأقسام</h3>
+‏                    <p>تنظيم المتجر بأقسام واضحة لتسهيل التصفح على عملائك</p>
+‏                </div>
+
+‏                <div class="service-card">
+‏                    <div class="service-icon">📦</div>
+‏                    <h3>إضافة المنتجات</h3>
+‏                    <p>رفع منتجاتك مع الأوصاف، الصور، الأسعار، الخيارات والكميات</p>
+‏                </div>
+
+‏                <div class="service-card">
+‏                    <div class="service-icon">⚙️</div>
+‏                    <h3>الخيارات والكميات</h3>
+‏                    <p>إضافة خيارات المنتجات (مقاسات، ألوان) وضبط الكميات المتوفرة</p>
+‏                </div>
+
+‏                <div class="service-card">
+‏                    <div class="service-icon">📄</div>
+‏                    <h3>سياسات المتجر</h3>
+‏                    <p>إعداد سياسة الخصوصية، سياسة الاستبدال والإرجاع بشكل احترافي</p>
+‏                </div>
+
+‏                <div class="service-card">
+‏                    <div class="service-icon">ℹ️</div>
+‏                    <h3>صفحة من نحن</h3>
+‏                    <p>كتابة وتصميم صفحة من نحن لتعريف عملائك بمتجرك</p>
+‏                </div>
+‏            </div>
+‏        </div>
+‏    </section>
+
+‏    <section class="features">
+‏        <div class="container">
+‏            <h2>ما يميز خدماتنا</h2>
+‏            <div class="features-list">
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>تصميم واجهة المتجر بشكل احترافي</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>إضافة الأقسام وتنظيم المنتجات</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>رفع المنتجات مع الأسعار والخيارات</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>ضبط الكميات المتوفرة لكل منتج</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>كتابة سياسة الخصوصية والاستبدال</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>إعداد صفحة من نحن بشكل مميز</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>سعر ثابت 139 ريال بدون تكاليف إضافية</p>
+‏                </div>
+‏                <div class="feature-item">
+‏                    <span class="check">✓</span>
+‏                    <p>تسليم سريع ومتجر جاهز للعمل</p>
+‏                </div>
+‏            </div>
+‏        </div>
+‏    </section>
+
+‏    <section class="cta">
+‏        <div class="container">
+‏            <h2>ابدأ الآن وانطلق بمتجرك الإلكتروني!</h2>
+‏            <p>تواصل معنا عبر الواتساب وسنبدأ بتصميم متجرك الاحترافي اليوم</p>
+‏            <a href="https://wa.me/966501184796?text=السلام%20عليكم%20ابغى%20اطلب%20تصميم%20متجر%20Jetaime%20بـ%20139%20ريال" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">📱 اطلب متجرك الآن عبر واتساب</a>
+‏        </div>
+‏    </section>
+
+‏    <footer>
+‏        <div class="container">
+‏            <p>&copy; 2026 Jetaime - جميع الحقوق محفوظة</p>
+‏        </div>
+‏    </footer>
+‏</body>
+‏</html>
